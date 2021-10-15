@@ -5,7 +5,9 @@ const PictureController={
 
     guardarPersona:(req, res)=>{
 
+        console.log(req.body)
         const { foto }=req.body;
+        
         let fotoNueva = new FotoPersona({
             foto,
             
@@ -27,6 +29,7 @@ const PictureController={
             res.json({
                 ok: true,
                 foto: fotoDB.foto,
+                id:fotoDB._id,
             });
         });
 
